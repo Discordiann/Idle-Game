@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/MenuButton.gd" type="Script" id=1]
+
+[node name="SkillTrees_Menu" type="Node2D"]
+position = Vector2( 0, 128 )
+
+[node name="Background" type="Panel" parent="."]
+margin_right = 1024.0
+margin_bottom = 472.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DIV" type="Line2D" parent="."]
+points = PoolVector2Array( 0, 0, 1024, 0 )
+default_color = Color( 1, 1, 0, 1 )
+
+[node name="StarterSkills_Button" type="Button" parent="."]
+margin_left = 8.0
+margin_top = 16.0
+margin_right = 112.0
+margin_bottom = 44.0
+custom_colors/font_color = Color( 0, 1, 0.670588, 1 )
+text = "Starter Skills"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StarterSkills_Menu" type="Node2D" parent="."]
+
+[node name="Background" type="Panel" parent="StarterSkills_Menu"]
+margin_top = 56.0
+margin_right = 1024.0
+margin_bottom = 472.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DIV" type="Line2D" parent="StarterSkills_Menu"]
+position = Vector2( 0, 50 )
+points = PoolVector2Array( 24, 6, 1000, 6 )
+width = 2.0
+default_color = Color( 0, 1, 0.670588, 1 )

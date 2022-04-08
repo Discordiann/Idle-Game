@@ -1,0 +1,243 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/MenuButton.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/TechContainer.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/TechMenu.gd" type="Script" id=3]
+[ext_resource path="res://style_darker_panel.tres" type="StyleBox" id=4]
+[ext_resource path="res://global_theme.tres" type="Theme" id=5]
+[ext_resource path="res://new_styleboxtexture.tres" type="StyleBox" id=6]
+
+[node name="TechTrees_Menu" type="Node2D"]
+position = Vector2( 0, 128 )
+
+[node name="Background" type="Panel" parent="."]
+margin_top = 472.0
+margin_right = 472.0
+margin_bottom = 1496.0
+rect_rotation = -90.0
+theme = ExtResource( 5 )
+custom_styles/panel = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DIV" type="Line2D" parent="."]
+points = PoolVector2Array( 0, 0, 1024, 0 )
+default_color = Color( 0, 0.529412, 1, 1 )
+
+[node name="BasicTechs_Button" type="Button" parent="."]
+margin_left = 8.0
+margin_top = 16.0
+margin_right = 112.0
+margin_bottom = 44.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Basic Techs"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PhysicsTechs_Button" type="Button" parent="."]
+margin_left = 136.0
+margin_top = 16.0
+margin_right = 240.0
+margin_bottom = 44.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0.529412, 1, 1 )
+text = "Physics Techs"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EngineeringTechs_Button" type="Button" parent="."]
+margin_left = 264.0
+margin_top = 16.0
+margin_right = 391.0
+margin_bottom = 44.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 0.494118, 0, 1 )
+text = "Engineering Techs"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ComputingTechs_Button" type="Button" parent="."]
+margin_left = 416.0
+margin_top = 16.0
+margin_right = 538.0
+margin_bottom = 44.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 1, 0, 1 )
+text = "Computing Techs"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BasicTechs_Menu" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Background" type="Panel" parent="BasicTechs_Menu"]
+visible = false
+margin_top = 56.0
+margin_right = 1024.0
+margin_bottom = 472.0
+theme = ExtResource( 5 )
+custom_styles/panel = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DIV" type="Line2D" parent="BasicTechs_Menu"]
+position = Vector2( 0, 50 )
+points = PoolVector2Array( 24, 6, 1000, 6 )
+width = 2.0
+default_color = Color( 1, 0, 0, 1 )
+
+[node name="Techs" type="ScrollContainer" parent="BasicTechs_Menu"]
+margin_left = 16.0
+margin_top = 64.0
+margin_right = 1008.0
+margin_bottom = 464.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="GridContainer" parent="BasicTechs_Menu/Techs"]
+margin_right = 992.0
+margin_bottom = 400.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 5 )
+columns = 5
+script = ExtResource( 2 )
+
+[node name="PhysicsTechs_Menu" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 3 )
+
+[node name="Background" type="Panel" parent="PhysicsTechs_Menu"]
+visible = false
+margin_top = 56.0
+margin_right = 1024.0
+margin_bottom = 472.0
+theme = ExtResource( 5 )
+custom_styles/panel = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DIV" type="Line2D" parent="PhysicsTechs_Menu"]
+points = PoolVector2Array( 24, 56, 1000, 56 )
+width = 2.0
+default_color = Color( 0, 0.529412, 1, 1 )
+
+[node name="Techs" type="ScrollContainer" parent="PhysicsTechs_Menu"]
+margin_left = 16.0
+margin_top = 64.0
+margin_right = 1008.0
+margin_bottom = 464.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="GridContainer" parent="PhysicsTechs_Menu/Techs"]
+margin_right = 992.0
+margin_bottom = 400.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 5 )
+columns = 5
+script = ExtResource( 2 )
+
+[node name="EngineeringTechs_Menu" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 3 )
+
+[node name="Background" type="Panel" parent="EngineeringTechs_Menu"]
+visible = false
+margin_top = 56.0
+margin_right = 1024.0
+margin_bottom = 472.0
+theme = ExtResource( 5 )
+custom_styles/panel = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DIV" type="Line2D" parent="EngineeringTechs_Menu"]
+position = Vector2( 0, 50 )
+points = PoolVector2Array( 24, 6, 1000, 6 )
+width = 2.0
+default_color = Color( 1, 0.494118, 0, 1 )
+
+[node name="Techs" type="ScrollContainer" parent="EngineeringTechs_Menu"]
+margin_left = 16.0
+margin_top = 64.0
+margin_right = 1008.0
+margin_bottom = 464.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="GridContainer" parent="EngineeringTechs_Menu/Techs"]
+margin_right = 992.0
+margin_bottom = 400.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 5 )
+columns = 5
+script = ExtResource( 2 )
+
+[node name="ComputingTechs_Menu" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 3 )
+
+[node name="Background" type="Panel" parent="ComputingTechs_Menu"]
+visible = false
+margin_top = 56.0
+margin_right = 1024.0
+margin_bottom = 472.0
+theme = ExtResource( 5 )
+custom_styles/panel = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DIV" type="Line2D" parent="ComputingTechs_Menu"]
+points = PoolVector2Array( 24, 56, 1000, 56 )
+width = 2.0
+default_color = Color( 0, 1, 0, 1 )
+
+[node name="Techs" type="ScrollContainer" parent="ComputingTechs_Menu"]
+margin_left = 16.0
+margin_top = 64.0
+margin_right = 1008.0
+margin_bottom = 464.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="GridContainer" parent="ComputingTechs_Menu/Techs"]
+margin_right = 992.0
+margin_bottom = 400.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 5 )
+columns = 5
+script = ExtResource( 2 )

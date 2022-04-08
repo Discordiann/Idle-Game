@@ -1,0 +1,1412 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Scripts/MenuButton.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Icons/MaterialsBig.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Building.gd" type="Script" id=3]
+[ext_resource path="res://Graphics/Icons/RefinedMaterialsBig.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Icons/BasicTechBig.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/Label.gd" type="Script" id=6]
+[ext_resource path="res://Graphics/Icons/ComputingTechBig.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Icons/EngineeringTechBig.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Icons/PhysicsTechBig.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Icons/FactBBig.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/Icons/HouseBig.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/Icons/LeisureBig.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/Icons/FoodBig.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/Icons/UniversityBig.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/Icons/FuelBig.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/Icons/ElectricityBig.png" type="Texture" id=16]
+[ext_resource path="res://style_darker_panel.tres" type="StyleBox" id=17]
+[ext_resource path="res://global_theme.tres" type="Theme" id=18]
+[ext_resource path="res://new_styleboxtexture.tres" type="StyleBox" id=19]
+
+[node name="Buildings_Menu" type="Node2D"]
+position = Vector2( 0, 128 )
+
+[node name="Background" type="Panel" parent="."]
+margin_top = 472.0
+margin_right = 472.0
+margin_bottom = 1496.0
+rect_rotation = -90.0
+theme = ExtResource( 18 )
+custom_styles/panel = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DIV" type="Line2D" parent="."]
+points = PoolVector2Array( 0, 0, 1024, 0 )
+default_color = Color( 1, 0.494118, 0, 1 )
+
+[node name="Basics" type="Button" parent="."]
+margin_left = 8.0
+margin_top = 16.0
+margin_right = 112.0
+margin_bottom = 44.0
+theme = ExtResource( 18 )
+custom_colors/font_color = Color( 1, 0.494118, 0, 1 )
+text = "Basic"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Advanced" type="Button" parent="."]
+margin_left = 136.0
+margin_top = 16.0
+margin_right = 240.0
+margin_bottom = 44.0
+theme = ExtResource( 18 )
+custom_colors/font_color = Color( 0, 0.529412, 1, 1 )
+text = "Advanced"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="City" type="Button" parent="."]
+margin_left = 264.0
+margin_top = 16.0
+margin_right = 368.0
+margin_bottom = 44.0
+theme = ExtResource( 18 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+text = "City"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Basics_Menu" type="Node2D" parent="."]
+
+[node name="Background" type="Panel" parent="Basics_Menu"]
+visible = false
+margin_top = 56.0
+margin_right = 1024.0
+margin_bottom = 472.0
+theme = ExtResource( 18 )
+custom_styles/panel = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DIV" type="Line2D" parent="Basics_Menu"]
+position = Vector2( 0, 48 )
+points = PoolVector2Array( 24, 8, 1000, 8 )
+width = 2.0
+default_color = Color( 1, 0.494118, 0, 1 )
+
+[node name="MatEx" type="Button" parent="Basics_Menu"]
+margin_left = 8.0
+margin_top = 120.0
+margin_right = 232.0
+margin_bottom = 264.0
+theme = ExtResource( 18 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Basics_Menu/MatEx"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 72.0
+margin_bottom = 72.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Basics_Menu/MatEx"]
+margin_left = 80.0
+margin_top = 8.0
+margin_right = 192.0
+margin_bottom = 24.0
+text = "Material Extractor"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cost" type="Label" parent="Basics_Menu/MatEx"]
+margin_left = 80.0
+margin_top = 24.0
+margin_right = 216.0
+margin_bottom = 38.0
+text = "Cost:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Owned" type="Label" parent="Basics_Menu/MatEx"]
+margin_left = 80.0
+margin_top = 41.0
+margin_right = 216.0
+margin_bottom = 55.0
+text = "Owned:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Production" type="Label" parent="Basics_Menu/MatEx"]
+margin_left = 80.0
+margin_top = 58.6727
+margin_right = 216.0
+margin_bottom = 72.6727
+text = "Prod:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Power" type="Label" parent="Basics_Menu/MatEx"]
+margin_left = 8.0
+margin_top = 72.0
+margin_right = 216.0
+margin_bottom = 96.0
+text = "Power:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="Basics_Menu/MatEx"]
+margin_left = 8.0
+margin_top = 88.0
+margin_right = 216.0
+margin_bottom = 104.0
+min_value = -100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="Basics_Menu/MatEx"]
+margin_top = 112.0
+margin_right = 224.0
+margin_bottom = 126.0
+text = "Produces materials over time"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RMatRef" type="Button" parent="Basics_Menu"]
+margin_left = 272.0
+margin_top = 120.0
+margin_right = 496.0
+margin_bottom = 264.0
+theme = ExtResource( 18 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Basics_Menu/RMatRef"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 72.0
+margin_bottom = 72.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Basics_Menu/RMatRef"]
+margin_left = 80.0
+margin_top = 8.0
+margin_right = 181.0
+margin_bottom = 24.0
+text = "Material Refiner"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cost" type="Label" parent="Basics_Menu/RMatRef"]
+margin_left = 80.0
+margin_top = 24.0
+margin_right = 216.0
+margin_bottom = 38.0
+text = "Cost:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Owned" type="Label" parent="Basics_Menu/RMatRef"]
+margin_left = 80.0
+margin_top = 41.0
+margin_right = 216.0
+margin_bottom = 55.0
+text = "Owned:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Production" type="Label" parent="Basics_Menu/RMatRef"]
+margin_left = 80.0
+margin_top = 58.6727
+margin_right = 216.0
+margin_bottom = 72.6727
+text = "Prod:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Power" type="Label" parent="Basics_Menu/RMatRef"]
+margin_left = 8.0
+margin_top = 72.0
+margin_right = 216.0
+margin_bottom = 96.0
+text = "Power:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="Basics_Menu/RMatRef"]
+margin_left = 8.0
+margin_top = 88.0
+margin_right = 216.0
+margin_bottom = 104.0
+min_value = -100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="Basics_Menu/RMatRef"]
+margin_top = 112.0
+margin_right = 224.0
+margin_bottom = 126.0
+text = "Refines materials over time
+10 Material > 1 Refined Material"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BTechLab" type="Button" parent="Basics_Menu"]
+margin_left = 528.0
+margin_top = 120.0
+margin_right = 752.0
+margin_bottom = 264.0
+theme = ExtResource( 18 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Basics_Menu/BTechLab"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 72.0
+margin_bottom = 72.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Basics_Menu/BTechLab"]
+margin_left = 80.0
+margin_top = 8.0
+margin_right = 174.0
+margin_bottom = 24.0
+text = "Basic Tech Lab"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cost" type="Label" parent="Basics_Menu/BTechLab"]
+margin_left = 80.0
+margin_top = 24.0
+margin_right = 216.0
+margin_bottom = 38.0
+text = "Cost:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Owned" type="Label" parent="Basics_Menu/BTechLab"]
+margin_left = 80.0
+margin_top = 41.0
+margin_right = 216.0
+margin_bottom = 55.0
+text = "Owned:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Production" type="Label" parent="Basics_Menu/BTechLab"]
+margin_left = 80.0
+margin_top = 58.6727
+margin_right = 216.0
+margin_bottom = 72.6727
+text = "Prod:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Power" type="Label" parent="Basics_Menu/BTechLab"]
+margin_left = 8.0
+margin_top = 72.0
+margin_right = 216.0
+margin_bottom = 96.0
+text = "Power:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="Basics_Menu/BTechLab"]
+margin_left = 8.0
+margin_top = 88.0
+margin_right = 216.0
+margin_bottom = 104.0
+min_value = -100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="Basics_Menu/BTechLab"]
+margin_top = 112.0
+margin_right = 224.0
+margin_bottom = 143.0
+text = "Performs research over time
+10 Refined Material > 1 Basic Tech"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PTechLab" type="Button" parent="Basics_Menu"]
+margin_left = 792.0
+margin_top = 120.0
+margin_right = 1016.0
+margin_bottom = 264.0
+theme = ExtResource( 18 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Basics_Menu/PTechLab"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 72.0
+margin_bottom = 72.0
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Basics_Menu/PTechLab"]
+margin_left = 80.0
+margin_top = 8.0
+margin_right = 174.0
+margin_bottom = 24.0
+text = "Physics Tech Lab"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cost" type="Label" parent="Basics_Menu/PTechLab"]
+margin_left = 80.0
+margin_top = 24.0
+margin_right = 216.0
+margin_bottom = 38.0
+text = "Cost:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Owned" type="Label" parent="Basics_Menu/PTechLab"]
+margin_left = 80.0
+margin_top = 41.0
+margin_right = 216.0
+margin_bottom = 55.0
+text = "Owned:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Production" type="Label" parent="Basics_Menu/PTechLab"]
+margin_left = 80.0
+margin_top = 58.6727
+margin_right = 216.0
+margin_bottom = 72.6727
+text = "Prod:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Power" type="Label" parent="Basics_Menu/PTechLab"]
+margin_left = 8.0
+margin_top = 72.0
+margin_right = 216.0
+margin_bottom = 96.0
+text = "Power:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="Basics_Menu/PTechLab"]
+margin_left = 8.0
+margin_top = 88.0
+margin_right = 216.0
+margin_bottom = 104.0
+min_value = -100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="Basics_Menu/PTechLab"]
+margin_top = 112.0
+margin_right = 224.0
+margin_bottom = 143.0
+text = "Reveals secrets of the universe
+10 Basic Tech > 1 Physics Tech"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FuelRef" type="Button" parent="Basics_Menu"]
+margin_left = 8.0
+margin_top = 280.0
+margin_right = 232.0
+margin_bottom = 424.0
+theme = ExtResource( 18 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Basics_Menu/FuelRef"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 72.0
+margin_bottom = 72.0
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Basics_Menu/FuelRef"]
+margin_left = 80.0
+margin_top = 8.0
+margin_right = 163.0
+margin_bottom = 24.0
+text = "Fuel Refinery"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cost" type="Label" parent="Basics_Menu/FuelRef"]
+margin_left = 80.0
+margin_top = 24.0
+margin_right = 216.0
+margin_bottom = 38.0
+text = "Cost:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Owned" type="Label" parent="Basics_Menu/FuelRef"]
+margin_left = 80.0
+margin_top = 41.0
+margin_right = 216.0
+margin_bottom = 55.0
+text = "Owned:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Production" type="Label" parent="Basics_Menu/FuelRef"]
+margin_left = 80.0
+margin_top = 58.6727
+margin_right = 216.0
+margin_bottom = 72.6727
+text = "Prod:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Power" type="Label" parent="Basics_Menu/FuelRef"]
+margin_left = 8.0
+margin_top = 72.0
+margin_right = 216.0
+margin_bottom = 96.0
+text = "Power:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="Basics_Menu/FuelRef"]
+margin_left = 8.0
+margin_top = 88.0
+margin_right = 216.0
+margin_bottom = 104.0
+min_value = 1.0
+max_value = 1.0
+step = 0.1
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="Basics_Menu/FuelRef"]
+margin_top = 112.0
+margin_right = 224.0
+margin_bottom = 143.0
+text = "Refines fuel from materials
+10 Materials > 1 Fuel"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PowerPlnt" type="Button" parent="Basics_Menu"]
+margin_left = 272.0
+margin_top = 280.0
+margin_right = 496.0
+margin_bottom = 424.0
+theme = ExtResource( 18 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Basics_Menu/PowerPlnt"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 72.0
+margin_bottom = 72.0
+texture = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Basics_Menu/PowerPlnt"]
+margin_left = 80.0
+margin_top = 8.0
+margin_right = 155.0
+margin_bottom = 24.0
+text = "Power Plant"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cost" type="Label" parent="Basics_Menu/PowerPlnt"]
+margin_left = 80.0
+margin_top = 24.0
+margin_right = 216.0
+margin_bottom = 38.0
+text = "Cost:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Owned" type="Label" parent="Basics_Menu/PowerPlnt"]
+margin_left = 80.0
+margin_top = 41.0
+margin_right = 216.0
+margin_bottom = 55.0
+text = "Owned:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Production" type="Label" parent="Basics_Menu/PowerPlnt"]
+margin_left = 80.0
+margin_top = 58.6727
+margin_right = 216.0
+margin_bottom = 72.6727
+text = "Prod:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Power" type="Label" parent="Basics_Menu/PowerPlnt"]
+margin_left = 8.0
+margin_top = 72.0
+margin_right = 216.0
+margin_bottom = 96.0
+text = "Power:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="Basics_Menu/PowerPlnt"]
+margin_left = 8.0
+margin_top = 88.0
+margin_right = 216.0
+margin_bottom = 104.0
+min_value = -100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="Basics_Menu/PowerPlnt"]
+margin_top = 112.0
+margin_right = 224.0
+margin_bottom = 143.0
+text = "Boosts buildings with electricity
+1 Fuel > 1 MW"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ETechLab" type="Button" parent="Basics_Menu"]
+margin_left = 528.0
+margin_top = 280.0
+margin_right = 752.0
+margin_bottom = 424.0
+theme = ExtResource( 18 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Basics_Menu/ETechLab"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 72.0
+margin_bottom = 72.0
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Basics_Menu/ETechLab"]
+margin_left = 80.0
+margin_top = 8.0
+margin_right = 174.0
+margin_bottom = 24.0
+text = "Engineering Tech Lab"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cost" type="Label" parent="Basics_Menu/ETechLab"]
+margin_left = 80.0
+margin_top = 24.0
+margin_right = 216.0
+margin_bottom = 38.0
+text = "Cost:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Owned" type="Label" parent="Basics_Menu/ETechLab"]
+margin_left = 80.0
+margin_top = 41.0
+margin_right = 216.0
+margin_bottom = 55.0
+text = "Owned:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Production" type="Label" parent="Basics_Menu/ETechLab"]
+margin_left = 80.0
+margin_top = 58.6727
+margin_right = 216.0
+margin_bottom = 72.6727
+text = "Prod:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Power" type="Label" parent="Basics_Menu/ETechLab"]
+margin_left = 8.0
+margin_top = 72.0
+margin_right = 216.0
+margin_bottom = 96.0
+text = "Power:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="Basics_Menu/ETechLab"]
+margin_left = 8.0
+margin_top = 88.0
+margin_right = 216.0
+margin_bottom = 104.0
+min_value = -100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="Basics_Menu/ETechLab"]
+margin_top = 112.0
+margin_right = 224.0
+margin_bottom = 143.0
+text = "Disovers ways to decrease costs
+10 Basic Tech > 1 Engineering Tech"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CTechLab" type="Button" parent="Basics_Menu"]
+margin_left = 792.0
+margin_top = 280.0
+margin_right = 1016.0
+margin_bottom = 424.0
+theme = ExtResource( 18 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Basics_Menu/CTechLab"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 72.0
+margin_bottom = 72.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Basics_Menu/CTechLab"]
+margin_left = 80.0
+margin_top = 8.0
+margin_right = 174.0
+margin_bottom = 24.0
+text = "Computing Tech Lab"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cost" type="Label" parent="Basics_Menu/CTechLab"]
+margin_left = 80.0
+margin_top = 24.0
+margin_right = 216.0
+margin_bottom = 38.0
+text = "Cost:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Owned" type="Label" parent="Basics_Menu/CTechLab"]
+margin_left = 80.0
+margin_top = 41.0
+margin_right = 216.0
+margin_bottom = 55.0
+text = "Owned:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Production" type="Label" parent="Basics_Menu/CTechLab"]
+margin_left = 80.0
+margin_top = 58.6727
+margin_right = 216.0
+margin_bottom = 72.6727
+text = "Prod:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Power" type="Label" parent="Basics_Menu/CTechLab"]
+margin_left = 8.0
+margin_top = 72.0
+margin_right = 216.0
+margin_bottom = 96.0
+text = "Power:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="Basics_Menu/CTechLab"]
+margin_left = 8.0
+margin_top = 88.0
+margin_right = 216.0
+margin_bottom = 104.0
+min_value = -100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="Basics_Menu/CTechLab"]
+margin_top = 112.0
+margin_right = 224.0
+margin_bottom = 143.0
+text = "Allows for total automation
+10 Basic Tech > 1 Computing Tech"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="Basics_Menu"]
+margin_left = 8.0
+margin_top = 64.0
+margin_right = 1016.0
+margin_bottom = 112.0
+theme = ExtResource( 18 )
+text = "Buy buildings to produce materials
+Some buildings turn lower tier materials into higher tier ones
+Holding shift buys 10, control buys 25, and alt buys 100"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="divshort" type="Label" parent="Basics_Menu"]
+margin_left = 8.0
+margin_top = 432.0
+margin_right = 1016.0
+margin_bottom = 446.0
+theme = ExtResource( 18 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+align = 1
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Advanced_Menu" type="Node2D" parent="."]
+visible = false
+
+[node name="Background" type="Panel" parent="Advanced_Menu"]
+visible = false
+margin_top = 56.0
+margin_right = 1024.0
+margin_bottom = 472.0
+theme = ExtResource( 18 )
+custom_styles/panel = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DIV" type="Line2D" parent="Advanced_Menu"]
+position = Vector2( 0, 48 )
+points = PoolVector2Array( 24, 8, 1000, 8 )
+width = 2.0
+default_color = Color( 0, 0.529412, 1, 1 )
+
+[node name="FactB" type="Button" parent="Advanced_Menu"]
+margin_left = 8.0
+margin_top = 120.0
+margin_right = 232.0
+margin_bottom = 264.0
+theme = ExtResource( 18 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Advanced_Menu/FactB"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 72.0
+margin_bottom = 72.0
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Advanced_Menu/FactB"]
+margin_left = 80.0
+margin_top = 8.0
+margin_right = 192.0
+margin_bottom = 24.0
+text = "Commercial Industry"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cost" type="Label" parent="Advanced_Menu/FactB"]
+margin_left = 80.0
+margin_top = 24.0
+margin_right = 216.0
+margin_bottom = 38.0
+text = "Cost:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Owned" type="Label" parent="Advanced_Menu/FactB"]
+margin_left = 80.0
+margin_top = 41.0
+margin_right = 216.0
+margin_bottom = 55.0
+text = "Owned:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Production" type="Label" parent="Advanced_Menu/FactB"]
+margin_left = 80.0
+margin_top = 58.6727
+margin_right = 216.0
+margin_bottom = 72.6727
+text = "Prod:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Power" type="Label" parent="Advanced_Menu/FactB"]
+margin_left = 8.0
+margin_top = 72.0
+margin_right = 216.0
+margin_bottom = 96.0
+text = "Power:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="Advanced_Menu/FactB"]
+margin_left = 8.0
+margin_top = 88.0
+margin_right = 216.0
+margin_bottom = 104.0
+min_value = -100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="Advanced_Menu/FactB"]
+margin_top = 112.0
+margin_right = 224.0
+margin_bottom = 126.0
+text = "Boosts mats and rmats
+100 mats > log2(Owned+1) boost"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="University" type="Button" parent="Advanced_Menu"]
+margin_left = 272.0
+margin_top = 120.0
+margin_right = 496.0
+margin_bottom = 264.0
+theme = ExtResource( 18 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Advanced_Menu/University"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 72.0
+margin_bottom = 72.0
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Advanced_Menu/University"]
+margin_left = 80.0
+margin_top = 8.0
+margin_right = 145.0
+margin_bottom = 24.0
+text = "University"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cost" type="Label" parent="Advanced_Menu/University"]
+margin_left = 80.0
+margin_top = 24.0
+margin_right = 216.0
+margin_bottom = 38.0
+text = "Cost:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Owned" type="Label" parent="Advanced_Menu/University"]
+margin_left = 80.0
+margin_top = 41.0
+margin_right = 216.0
+margin_bottom = 55.0
+text = "Owned:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Production" type="Label" parent="Advanced_Menu/University"]
+margin_left = 80.0
+margin_top = 58.6727
+margin_right = 216.0
+margin_bottom = 72.6727
+text = "Prod:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Power" type="Label" parent="Advanced_Menu/University"]
+margin_left = 8.0
+margin_top = 72.0
+margin_right = 216.0
+margin_bottom = 96.0
+text = "Power:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="Advanced_Menu/University"]
+margin_left = 8.0
+margin_top = 88.0
+margin_right = 216.0
+margin_bottom = 104.0
+min_value = -100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="Advanced_Menu/University"]
+margin_top = 112.0
+margin_right = 225.0
+margin_bottom = 143.0
+text = "Boosts tech production
+100 rmats > log2(Owned+1) boost"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="Advanced_Menu"]
+margin_left = 8.0
+margin_top = 64.0
+margin_right = 1016.0
+margin_bottom = 112.0
+theme = ExtResource( 18 )
+text = "Buy these buildings to boost production
+They will not directly produce resources but instead synergise others"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="City_Menu" type="Node2D" parent="."]
+visible = false
+
+[node name="Background" type="Panel" parent="City_Menu"]
+visible = false
+margin_top = 56.0
+margin_right = 1024.0
+margin_bottom = 472.0
+theme = ExtResource( 18 )
+custom_styles/panel = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DIV" type="Line2D" parent="City_Menu"]
+points = PoolVector2Array( 24, 56, 1000, 56 )
+width = 2.0
+default_color = Color( 1, 1, 0, 1 )
+
+[node name="House" type="Button" parent="City_Menu"]
+margin_left = 8.0
+margin_top = 120.0
+margin_right = 232.0
+margin_bottom = 264.0
+theme = ExtResource( 18 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="City_Menu/House"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 72.0
+margin_bottom = 72.0
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="City_Menu/House"]
+margin_left = 80.0
+margin_top = 8.0
+margin_right = 132.0
+margin_bottom = 24.0
+text = "Housing"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cost" type="Label" parent="City_Menu/House"]
+margin_left = 80.0
+margin_top = 24.0
+margin_right = 216.0
+margin_bottom = 38.0
+text = "Cost:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Owned" type="Label" parent="City_Menu/House"]
+margin_left = 80.0
+margin_top = 41.0
+margin_right = 216.0
+margin_bottom = 55.0
+text = "Owned:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Production" type="Label" parent="City_Menu/House"]
+margin_left = 80.0
+margin_top = 58.6727
+margin_right = 216.0
+margin_bottom = 72.6727
+text = "Prod:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Power" type="Label" parent="City_Menu/House"]
+margin_left = 8.0
+margin_top = 72.0
+margin_right = 216.0
+margin_bottom = 96.0
+text = "Power:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="City_Menu/House"]
+margin_left = 8.0
+margin_top = 88.0
+margin_right = 216.0
+margin_bottom = 104.0
+min_value = -100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="City_Menu/House"]
+margin_top = 112.0
+margin_right = 224.0
+margin_bottom = 126.0
+text = "Increases population capacity"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Farm" type="Button" parent="City_Menu"]
+margin_left = 272.0
+margin_top = 120.0
+margin_right = 496.0
+margin_bottom = 264.0
+theme = ExtResource( 18 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="City_Menu/Farm"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 72.0
+margin_bottom = 72.0
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="City_Menu/Farm"]
+margin_left = 80.0
+margin_top = 8.0
+margin_right = 112.0
+margin_bottom = 24.0
+text = "Farm"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cost" type="Label" parent="City_Menu/Farm"]
+margin_left = 80.0
+margin_top = 24.0
+margin_right = 216.0
+margin_bottom = 38.0
+text = "Cost:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Owned" type="Label" parent="City_Menu/Farm"]
+margin_left = 80.0
+margin_top = 41.0
+margin_right = 216.0
+margin_bottom = 55.0
+text = "Owned:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Production" type="Label" parent="City_Menu/Farm"]
+margin_left = 80.0
+margin_top = 58.6727
+margin_right = 216.0
+margin_bottom = 72.6727
+text = "Prod:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Power" type="Label" parent="City_Menu/Farm"]
+margin_left = 8.0
+margin_top = 72.0
+margin_right = 216.0
+margin_bottom = 96.0
+text = "Power:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="City_Menu/Farm"]
+margin_left = 8.0
+margin_top = 88.0
+margin_right = 216.0
+margin_bottom = 104.0
+min_value = -100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="City_Menu/Farm"]
+margin_top = 112.0
+margin_right = 224.0
+margin_bottom = 126.0
+text = "Increases population growth"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Leisure" type="Button" parent="City_Menu"]
+margin_left = 528.0
+margin_top = 120.0
+margin_right = 752.0
+margin_bottom = 264.0
+theme = ExtResource( 18 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="City_Menu/Leisure"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 72.0
+margin_bottom = 72.0
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="City_Menu/Leisure"]
+margin_left = 80.0
+margin_top = 8.0
+margin_right = 112.0
+margin_bottom = 24.0
+text = "Leisure"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cost" type="Label" parent="City_Menu/Leisure"]
+margin_left = 80.0
+margin_top = 24.0
+margin_right = 216.0
+margin_bottom = 38.0
+text = "Cost:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Owned" type="Label" parent="City_Menu/Leisure"]
+margin_left = 80.0
+margin_top = 41.0
+margin_right = 216.0
+margin_bottom = 55.0
+text = "Owned:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Production" type="Label" parent="City_Menu/Leisure"]
+margin_left = 80.0
+margin_top = 58.6727
+margin_right = 216.0
+margin_bottom = 72.6727
+text = "Prod:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Power" type="Label" parent="City_Menu/Leisure"]
+margin_left = 8.0
+margin_top = 72.0
+margin_right = 216.0
+margin_bottom = 96.0
+text = "Power:"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="City_Menu/Leisure"]
+margin_left = 8.0
+margin_top = 88.0
+margin_right = 216.0
+margin_bottom = 104.0
+min_value = -100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="City_Menu/Leisure"]
+margin_top = 112.0
+margin_right = 224.0
+margin_bottom = 126.0
+text = "Increases the boost from 
+population by log2(Owned + 1)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="Label" parent="City_Menu"]
+margin_left = 8.0
+margin_top = 64.0
+margin_right = 1016.0
+margin_bottom = 112.0
+theme = ExtResource( 18 )
+text = "Use population to boost your production even further
+Population boosts production by log10(population) * leisure
+Farms grow population based on how much population is lower than the max"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,350 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://new_noisetexture.tres" type="Texture" id=1]
+[ext_resource path="res://Scripts/MenuButton.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=3]
+[ext_resource path="res://Graphics/Icons/RefinedMaterials.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Icons/Materials.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Icons/PhysicsTech.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/Icons/BasicTech.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Icons/ComputingTech.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Icons/EngineeringTech.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Buildings_Menu.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Upgrades_Menu.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/TechTrees_Menu.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scripts/TechButton.gd" type="Script" id=13]
+[ext_resource path="res://Scripts/Label.gd" type="Script" id=14]
+[ext_resource path="res://Scenes/Conquest_Menu.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Graphics/Icons/Population.png" type="Texture" id=16]
+[ext_resource path="res://Graphics/Icons/Electricity.png" type="Texture" id=17]
+[ext_resource path="res://Graphics/Icons/Fuel.png" type="Texture" id=18]
+[ext_resource path="res://global_theme.tres" type="Theme" id=19]
+[ext_resource path="res://Scenes/Settings_Menu.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Evolution_Menu.tscn" type="PackedScene" id=21]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.113725, 0.113725, 0.113725, 0.694118 )
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Copy" type="Node" parent="."]
+
+[node name="Tech" type="Button" parent="Copy"]
+margin_left = 8.0
+margin_top = -88.0
+margin_right = 200.0
+margin_bottom = -8.0
+rect_min_size = Vector2( 192, 80 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource( 19 )
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="Copy/Tech"]
+margin_right = 192.0
+margin_bottom = 22.0
+text = "Test"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cost" type="Label" parent="Copy/Tech"]
+margin_top = 24.0
+margin_right = 192.0
+margin_bottom = 38.0
+text = "Cost: "
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Description" type="Label" parent="Copy/Tech"]
+margin_top = 48.0
+margin_right = 192.0
+margin_bottom = 80.0
+text = "This is a test"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 1.52588e-05, 7.62939e-06 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1024.0
+margin_bottom = 128.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Numbers" type="Node2D" parent="."]
+
+[node name="mats_Icon" type="Sprite" parent="Numbers"]
+position = Vector2( 24, 24 )
+texture = ExtResource( 5 )
+
+[node name="mats_Label" type="Label" parent="Numbers"]
+margin_left = 48.0
+margin_top = 8.0
+margin_right = 144.0
+margin_bottom = 40.0
+valign = 1
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rmats_Icon" type="Sprite" parent="Numbers"]
+position = Vector2( 24, 64 )
+texture = ExtResource( 4 )
+
+[node name="rmats_Label" type="Label" parent="Numbers"]
+margin_left = 48.0
+margin_top = 48.0
+margin_right = 144.0
+margin_bottom = 80.0
+valign = 1
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="btech_Icon" type="Sprite" parent="Numbers"]
+position = Vector2( 168, 24 )
+texture = ExtResource( 7 )
+
+[node name="btech_Label" type="Label" parent="Numbers"]
+margin_left = 192.0
+margin_top = 8.0
+margin_right = 288.0
+margin_bottom = 40.0
+valign = 1
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ptech_Icon" type="Sprite" parent="Numbers"]
+position = Vector2( 312, 24 )
+texture = ExtResource( 6 )
+
+[node name="ptech_Label" type="Label" parent="Numbers"]
+margin_left = 336.0
+margin_top = 8.0
+margin_right = 432.0
+margin_bottom = 40.0
+valign = 1
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="etech_Icon" type="Sprite" parent="Numbers"]
+position = Vector2( 456, 24 )
+texture = ExtResource( 9 )
+
+[node name="etech_Label" type="Label" parent="Numbers"]
+margin_left = 480.0
+margin_top = 8.0
+margin_right = 576.0
+margin_bottom = 40.0
+valign = 1
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ctech_Icon" type="Sprite" parent="Numbers"]
+position = Vector2( 600, 24 )
+texture = ExtResource( 8 )
+
+[node name="ctech_Label" type="Label" parent="Numbers"]
+margin_left = 624.0
+margin_top = 8.0
+margin_right = 720.0
+margin_bottom = 40.0
+valign = 1
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pop_Icon" type="Sprite" parent="Numbers"]
+position = Vector2( 168, 64 )
+texture = ExtResource( 16 )
+
+[node name="pop_Label" type="Label" parent="Numbers"]
+margin_left = 192.0
+margin_top = 48.0
+margin_right = 288.0
+margin_bottom = 80.0
+valign = 1
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fuel_Icon" type="Sprite" parent="Numbers"]
+position = Vector2( 312, 64 )
+texture = ExtResource( 18 )
+
+[node name="fuel_Label" type="Label" parent="Numbers"]
+margin_left = 336.0
+margin_top = 48.0
+margin_right = 432.0
+margin_bottom = 80.0
+valign = 1
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="elec_Icon" type="Sprite" parent="Numbers"]
+position = Vector2( 456, 64 )
+texture = ExtResource( 17 )
+
+[node name="elec_Label" type="Label" parent="Numbers"]
+margin_left = 480.0
+margin_top = 48.0
+margin_right = 576.0
+margin_bottom = 80.0
+valign = 1
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buildings_Button" type="Button" parent="."]
+margin_left = 8.0
+margin_top = 88.0
+margin_right = 112.0
+margin_bottom = 116.0
+theme = ExtResource( 19 )
+custom_colors/font_color = Color( 1, 0.494118, 0, 1 )
+text = "Buildings"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Upgrades_Button" type="Button" parent="."]
+margin_left = 136.0
+margin_top = 88.0
+margin_right = 240.0
+margin_bottom = 116.0
+theme = ExtResource( 19 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+text = "Upgrades"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TechTrees_Button" type="Button" parent="."]
+margin_left = 264.0
+margin_top = 88.0
+margin_right = 368.0
+margin_bottom = 116.0
+theme = ExtResource( 19 )
+custom_colors/font_color = Color( 0, 0.529412, 1, 1 )
+text = "Tech Trees"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Conquest_Button" type="Button" parent="."]
+margin_left = 392.0
+margin_top = 88.0
+margin_right = 496.0
+margin_bottom = 116.0
+theme = ExtResource( 19 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Conquest"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Evolution_Button" type="Button" parent="."]
+margin_left = 776.0
+margin_top = 88.0
+margin_right = 880.0
+margin_bottom = 116.0
+theme = ExtResource( 19 )
+custom_colors/font_color = Color( 0, 1, 1, 1 )
+text = "Evolution"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings_Button" type="Button" parent="."]
+margin_left = 904.0
+margin_top = 88.0
+margin_right = 1008.0
+margin_bottom = 116.0
+theme = ExtResource( 19 )
+text = "Settings"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buildings_Menu" parent="." instance=ExtResource( 10 )]
+
+[node name="Upgrades_Menu" parent="." instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 0, 128 )
+
+[node name="TechTrees_Menu" parent="." instance=ExtResource( 12 )]
+visible = false
+
+[node name="Conquest_Menu" parent="." instance=ExtResource( 15 )]
+visible = false
+
+[node name="Evolution_Menu" parent="." instance=ExtResource( 21 )]
+visible = false
+
+[node name="Settings_Menu" parent="." instance=ExtResource( 20 )]
+
+[node name="Save" type="Button" parent="."]
+margin_left = 904.0
+margin_top = 8.0
+margin_right = 1008.0
+margin_bottom = 36.0
+theme = ExtResource( 19 )
+custom_colors/font_color = Color( 0, 0.658824, 0.952941, 1 )
+text = "Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FPS" type="Label" parent="."]
+margin_left = 992.0
+margin_right = 1024.0
+margin_bottom = 14.0
+text = "00"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AutoSave" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[connection signal="pressed" from="Save" to="." method="_on_Save_pressed"]
+[connection signal="timeout" from="AutoSave" to="." method="_on_AutoSave_timeout"]

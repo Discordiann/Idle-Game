@@ -1,0 +1,34 @@
+[gd_resource type="Theme" load_steps=10 format=2]
+
+[ext_resource path="res://style_tab_bg.tres" type="StyleBox" id=1]
+[ext_resource path="res://style_tab_fg.tres" type="StyleBox" id=2]
+[ext_resource path="res://style_tab_disabled.tres" type="StyleBox" id=3]
+[ext_resource path="res://style_focused.tres" type="StyleBox" id=4]
+[ext_resource path="res://style_hover.tres" type="StyleBox" id=5]
+[ext_resource path="res://style_pressed.tres" type="StyleBox" id=6]
+[ext_resource path="res://style_normal.tres" type="StyleBox" id=7]
+[ext_resource path="res://style_disabled.tres" type="StyleBox" id=8]
+[ext_resource path="res://style_text.tres" type="StyleBox" id=9]
+
+[resource]
+Button/colors/font_color_disabled = Color( 1, 1, 1, 0.2 )
+Button/colors/font_color_pressed = Color( 0.219608, 0.219608, 0.219608, 1 )
+Button/styles/disabled = ExtResource( 8 )
+Button/styles/hover = ExtResource( 5 )
+Button/styles/normal = ExtResource( 7 )
+Button/styles/pressed = ExtResource( 6 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0.568627 )
+Label/styles/normal = ExtResource( 9 )
+LineEdit/styles/focus = ExtResource( 4 )
+LineEdit/styles/normal = ExtResource( 7 )
+LineEdit/styles/read_only = ExtResource( 8 )
+Panel/styles/panel = ExtResource( 7 )
+TabContainer/styles/panel = ExtResource( 7 )
+TabContainer/styles/tab_bg = ExtResource( 1 )
+TabContainer/styles/tab_disabled = ExtResource( 3 )
+TabContainer/styles/tab_fg = ExtResource( 2 )
+TextEdit/styles/focus = ExtResource( 4 )
+TextEdit/styles/normal = ExtResource( 7 )
+TextEdit/styles/read_only = ExtResource( 8 )
+Tree/styles/bg = ExtResource( 7 )
+Tree/styles/selected = ExtResource( 4 )
