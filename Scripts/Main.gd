@@ -138,7 +138,7 @@ var BasicTechs = {
 	
 	"BAdvUnlock": {"cost":1e4,"name":"Inventive Building Design","desc":"Unlocks the Advanced Buildings tab","reqs":[]},
 	"BAdvUpUnlock": {"cost":1e6,"name":"Synergistic Concepts","desc":"Unlocks the Advanced Upgrades tab","reqs":[]},
-	"BCtyUnlock": {"cost":1e7,"name":"Government Theory","desc":"Unlocks the City tab","reqs":["BAdvUnlock"]},
+	"BCityUnlock": {"cost":1e7,"name":"Government Theory","desc":"Unlocks the City tab","reqs":["BAdvUnlock"]},
 	"BConqUnlock": {"cost":1e7,"name":"Threat Detection","desc":"Unlocks the Conquest tab","reqs":[]},
 	"BPTechUnlock": {"cost":1e7,"name":"Discovery of Gravity","desc":"Unlocks physics research","reqs":["BTechEffici1"]},
 	"BETechUnlock": {"cost":1e9,"name":"Professional Design","desc":"Unlocks engineering research","reqs":["BPTechUnlock"]},
@@ -355,6 +355,7 @@ func _process(delta):
 		divshort = _mult(_mult(mats,mats), [1,-18])
 	
 	leisure = _find_total_production("leisure")
+	popmax = _find_total_production("popmax")
 	popprod = _find_total_production("pop")
 	pop = _add(pop, _mult(popprod, _conv(delta)))
 	if _comp(pop,popmax):
@@ -504,13 +505,13 @@ func _view_update():
 	else: if view.BTechLab == false && _comp(mats, [1,4]):
 		view.BTechLab = true
 		update.append("BTechLab")
-	else: if view.PTechLab == false && Technologies.has("PTechUnlock"):
+	else: if view.PTechLab == false && Technologies.has("BPTechUnlock"):
 		view.PTechLab = true
 		update.append("PTechLab")
-	else: if view.ETechLab == false && Technologies.has("ETechUnlock"):
+	else: if view.ETechLab == false && Technologies.has("BETechUnlock"):
 		view.ETechLab = true
 		update.append("ETechLab")
-	else: if view.CTechLab == false && Technologies.has("CTechUnlock"):
+	else: if view.CTechLab == false && Technologies.has("BCTechUnlock"):
 		view.CTechLab = true
 		update.append("CTechLab")
 	else: if view.elec == false && Technologies.has("PElecUnlock"):

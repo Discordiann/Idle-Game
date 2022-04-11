@@ -73,9 +73,6 @@ theme = ExtResource( 18 )
 custom_colors/font_color = Color( 1, 1, 0, 1 )
 text = "City"
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Basics_Menu" type="Node2D" parent="."]
 
